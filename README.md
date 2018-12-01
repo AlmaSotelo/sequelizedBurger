@@ -1,7 +1,7 @@
 ### Homework wk-16 "SequelizedBurger"
-   This Web-app uses Node-mySQL-Handlebars-Sequelize.
+   This Web-app uses Node-Express-mySQL-Handlebars-Sequelize.
 ## Objetive
-   The main gold of this app is to show the basic use of sequelize instead of the manual ORM used in the past buerger app.
+   The main gold of this app is to show the basic use of sequelize instead of the customized ORM used in the past buerger app.
    ![app's shotscreen](forReadme.png)   
 *  CONSTRUCCION:
    1) Use burger app as a starting point,
