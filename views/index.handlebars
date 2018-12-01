@@ -1,21 +1,25 @@
 <!-- Here goes the majority of the handlebars code -->
 <div class="container">
   <div class= "row">
-    <div class="col-xm-12 text-center" id="top-bar">
+    <div class="col-xl-12 text-center" id="top-bar">
       <h1>Super duper Delicious Burgers...DEVOURE IT!</h1>
     </div>
   </div> <!-- end of first row--> 
-  <div class="col-xs text-center" class="task">
+  <div id="imageContainer">
+    <img src ="./assets/img/burger.jpg" width="150px" height="150px">
+  </div>
+  
+  <div class="col-xl text-center" class="task">
     <div class="row">
-      {{#each burger_data}}
+      {{#each burger}}
       {{#unless this.devoured}}
       <div style="display:flex">
-        <div class="col-xm text-center">
+        <div class="col-xl text-center">
           <div class="burger">
             {{this.burger_name}}
           </div>
         </div>
-        <div class="col-xm text-center">
+        <div class="col-xl text-center">
           <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
             <input type="hidden" name="burger_id" type="text" value={{this.id}}>
             <br>
@@ -28,7 +32,7 @@
     </div>
     <div style="flex-wrap:wrap" class="container">
       <div style="display:flex" class="col-xm text-center" class="task">
-        {{#each burger_data}}
+        {{#each burger}}
           {{#if this.devoured}}
         <div style="display:flex" class="devouredContainers">
           <div class="devouredBurger">
@@ -41,13 +45,12 @@
     </div>
   </div>  
 <div class="container">
-  <div class="row">
-    <div class="col-xm-12 text-center enter_section">
+  <div id="entering" class="row">
+    <div class="col-xl-6 text-center enter_section">
       <form action="/burgers/add" method="POST">
-        <input type="text" name="burger_name" class="form-control" value="" id="enter_text">
-        <button type="submit" class="btn btn-primary" id="text-enter-button">ADD IT</button>   
+        <input type="text" name="burger_name" class="form-control" value="" id="enter_text" placeholder="Enter in a burger you would like to eat">
+        <button id="additBtn" type="submit" class="btn btn-primary" id="text-enter-button">ADD IT</button>   
       </form>
-      <h3>Enter in "My way" burger you would like to eat</h3>
     </div>
   </div>
 </div>
